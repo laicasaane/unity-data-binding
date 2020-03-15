@@ -436,6 +436,7 @@ namespace Realmar.DataBindings.Editor.Emitting
 
 		#region Attributes
 
+#pragma warning disable CS0162
 		private void EmitCustomAttribute<TAttribute>(
 			ICustomAttributeProvider target,
 			ModuleDefinition module,
@@ -463,6 +464,7 @@ namespace Realmar.DataBindings.Editor.Emitting
 					new CustomAttributeArgument(module.ImportReference(type).Resolve(), value));
 			}
 		}
+#pragma warning restore CS0162
 
 		#endregion
 

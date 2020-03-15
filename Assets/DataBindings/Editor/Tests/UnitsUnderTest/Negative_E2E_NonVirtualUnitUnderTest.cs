@@ -82,6 +82,16 @@ namespace UnitsUnderTest.Negative_E2E_NonVirtualTests.OneWay_Throw_TargetNull_Us
 	{
 		public string Text { get; set; }
 
+		public override bool Equals(object obj)
+		{
+			return base.Equals(obj);
+		}
+
+		public override int GetHashCode()
+		{
+			return base.GetHashCode();
+		}
+
 		public static bool operator ==(Target a, Target b)
 		{
 			return ReferenceEquals(a, b);
@@ -114,6 +124,16 @@ namespace UnitsUnderTest.Negative_E2E_NonVirtualTests.FromTarget_Throw_TargetNul
 	internal class Target
 	{
 		public string Text { get; set; }
+
+		public override bool Equals(object obj)
+		{
+			return base.Equals(obj);
+		}
+
+		public override int GetHashCode()
+		{
+			return base.GetHashCode();
+		}
 
 		public static bool operator ==(Target a, Target b)
 		{
