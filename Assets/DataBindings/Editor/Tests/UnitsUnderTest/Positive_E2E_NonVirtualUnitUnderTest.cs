@@ -283,6 +283,16 @@ namespace UnitsUnderTest.Positive_E2E_NonVirtualTests.OneWay_NullCheck_TargetNul
 	{
 		public string Text { get; set; }
 
+		public override bool Equals(object obj)
+		{
+			return base.Equals(obj);
+		}
+
+		public override int GetHashCode()
+		{
+			return base.GetHashCode();
+		}
+
 		public static bool operator ==(Target a, Target b)
 		{
 			return ReferenceEquals(a, b);
@@ -362,6 +372,16 @@ namespace UnitsUnderTest.Positive_E2E_NonVirtualTests.FromTarget_NoThrow_TargetN
 	{
 		public string Text { get; set; }
 
+		public override bool Equals(object obj)
+		{
+			return base.Equals(obj);
+		}
+
+		public override int GetHashCode()
+		{
+			return base.GetHashCode();
+		}
+
 		public static bool operator ==(Target a, Target b)
 		{
 			return ReferenceEquals(a, b);
@@ -384,8 +404,9 @@ namespace UnitsUnderTest.Positive_E2E_NonVirtualTests.FromTarget_NullCheck_NoThr
 		[Binding(BindingType.OneWayFromTarget, nullCheckBehavior: NullCheckBehavior.EnableNullCheck)]
 		public string Text { get; set; }
 
-
+#pragma warning disable CS0414
 		private int _sample;
+#pragma warning restore CS0414
 
 		[BindingInitializer(throwOnFailure: false)]
 		public void InitializeBindings()
@@ -411,9 +432,10 @@ namespace UnitsUnderTest.Positive_E2E_NonVirtualTests.FromTarget_NullCheck_NoThr
 		[Binding(BindingType.OneWayFromTarget, nullCheckBehavior: NullCheckBehavior.EnableNullCheck)]
 		public string Text { get; set; }
 
-
+#pragma warning disable CS0649, CS0414
 		private int _sample;
 		private int _result;
+#pragma warning restore CS0649, CS0414
 
 		[BindingInitializer(throwOnFailure: false)]
 		public void InitializeBindings()
@@ -450,8 +472,9 @@ namespace UnitsUnderTest.Positive_E2E_NonVirtualTests.FromTarget_Throw_TargetNul
 		[Binding(BindingType.OneWayFromTarget, nullCheckBehavior: NullCheckBehavior.DisableNullCheck)]
 		public string Text { get; set; }
 
-
+#pragma warning disable CS0414
 		private int _sample;
+#pragma warning restore CS0414
 
 		[BindingInitializer]
 		public void InitializeBindings()
@@ -471,7 +494,9 @@ namespace UnitsUnderTest.Positive_E2E_NonVirtualTests.OneWay_Binding_NullCheck_C
 	[Source, CompileTimeType, RunTimeType]
 	internal class Source
 	{
+#pragma warning disable CS0414
 		private int _sample;
+#pragma warning restore CS0414
 		private string _text;
 
 		[BindingTarget, Id(1)] public Target BindingTarget { get; set; }
@@ -499,7 +524,9 @@ namespace UnitsUnderTest.Positive_E2E_NonVirtualTests.TwoWay_Binding_CustomLogic
 	[Source, CompileTimeType, RunTimeType]
 	internal class Source
 	{
+#pragma warning disable CS0414
 		private int _sample;
+#pragma warning restore CS0414
 		private string _text;
 
 		[BindingTarget, Id(1)] public Target BindingTarget { get; set; }
@@ -524,7 +551,9 @@ namespace UnitsUnderTest.Positive_E2E_NonVirtualTests.TwoWay_Binding_CustomLogic
 	[Target, Id(1)]
 	internal class Target
 	{
+#pragma warning disable CS0414
 		private int _sample;
+#pragma warning restore CS0414
 		private string _text;
 
 		public string Text

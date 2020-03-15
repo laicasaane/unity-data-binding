@@ -1,5 +1,7 @@
 using System;
 
+#pragma warning disable CS0067
+
 namespace Realmar.DataBindings.Validators
 {
 	public interface IDataValidator<in TData, out TTResult>
@@ -44,3 +46,5 @@ namespace Realmar.DataBindings.Validators
 		Func<TData, TResult> Validator { get; }
 	}
 }
+
+#pragma warning restore CS0067

@@ -5,10 +5,10 @@ namespace Realmar.DataBindings.Examples.NonVirtual
 {
 	public class View : MonoBehaviour
 	{
-		[SerializeField] private TMP_InputField _surnameInput;
-		[SerializeField] private TMP_InputField _lastnameInput;
-		[SerializeField] private TMP_InputField _ageInput;
-		[SerializeField] private TMP_Text _summaryText;
+		[SerializeField] private TMP_InputField _surnameInput = null;
+		[SerializeField] private TMP_InputField _lastnameInput = null;
+		[SerializeField] private TMP_InputField _ageInput = null;
+		[SerializeField] private TMP_Text _summaryText = null;
 
 		private string _surname;
 		private string _lastname;

@@ -23,7 +23,9 @@ namespace UnitsUnderTest.Positive_E2E_InvokeOnChangeTests.NonAbstract_NoBindings
 	[Source, CompileTimeType, RunTimeType]
 	internal class Source
 	{
+#pragma warning disable CS0414
 		[Result(Expected = 42), Id(1)] private int _result;
+#pragma warning restore CS0414
 
 		[InvokeOnChange(nameof(OnChange)), Id(1)]
 		public string Text { get; set; }

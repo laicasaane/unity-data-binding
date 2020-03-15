@@ -10,6 +10,7 @@ namespace Realmar.DataBindings.Editor.Tests.UnitTests
 	[TestFixture]
 	internal class UnsafeHelperTests : MarshalByRefObject
 	{
+#pragma warning disable CS0649
 		private struct UnmanagedData
 		{
 			public int I;
@@ -25,6 +26,7 @@ namespace Realmar.DataBindings.Editor.Tests.UnitTests
 			public UnmanagedData D2;
 			public UnmanagedData D3;
 		}
+#pragma warning restore CS0649
 
 		public class DataClass
 		{

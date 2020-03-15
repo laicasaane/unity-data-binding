@@ -5,7 +5,7 @@ namespace Realmar.DataBindings.Examples.NonVirtual
 {
 	public class NonVirtualGameObjectInstaller : MonoInstaller<NonVirtualGameObjectInstaller>
 	{
-		[SerializeField] private View _view;
+		[SerializeField] private View _view = null;
 
 		public override void InstallBindings()
 		{
